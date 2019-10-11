@@ -1,0 +1,56 @@
+/// Code to extract a time series of MODIS NDVI
+
+// plot A
+var ROI1 = /* color: #0b4a8b */ee.Geometry.Point([-52.37924, -13.07962]);
+// plot B
+var ROI2 = /* color: #0b4a8b */ee.Geometry.Point([-52.38392, -13.0796]);
+// plot C
+var ROI3 = /* color: #0b4a8b */ee.Geometry.Point([-52.38859, -13.0796]);
+
+// center the map into the ROI
+Map.addLayer(ROI1, {color: 'FF0000'}, 'ROI1');
+Map.addLayer(ROI2, {color: 'FF0000'}, 'ROI2');
+Map.addLayer(ROI3, {color: 'FF0000'}, 'ROI');
+Map.centerObject(ROI1, 13)
+
+
+
+// plot A
+//var ROI = /* color: #0b4a8b */ee.Geometry.Point([-52.37924, -13.07962]);
+// plot B
+//var ROI = /* color: #0b4a8b */ee.Geometry.Point([-52.38392, -13.0796]);
+// plot C
+var ROI = /* color: #0b4a8b */ee.Geometry.Point([-52.38859, -13.0796]);
+
+// center the map into the ROI
+Map.addLayer(ROI, {color: 'FF0000'}, 'ROI');
+Map.centerObject(ROI, 13)
+
+// ## List images
+var ImgCol = ee.ImageCollection('MODIS/006/MOD13Q1')
+    .filterBounds(ROI)
+var count = ImgCol.size()
+print('Count: ', count)
+//print(ImgCol)
+
+//function to create mask from SummaryQA
+var maskQA = function(image) {
+  return image.updateMask(image.select("SummaryQA").eq(0));
+};
+
+// mask the images using the maskQA
+//var ImgCol = ImgCol.map(maskQA)
+
+// visualize one image
+var image = ee.Image(ImgCol.first())
+print('Image metadata', image)
+var vizParams = {
+  bands: ['NDVI'],
+  min: 0,
+  max: 10000,
+}
+Map.addLayer(image, vizParams, 'MODIS NDVI')
+
+// Create and print a time series chart
+print(ui.Chart.image.series(ImgCol, ee.Feature(ROI), ee.Reducer.mean(), 250));
+
