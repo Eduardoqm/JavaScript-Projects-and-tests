@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br"><!--Lingua utilizada-->
+<head><!--Cabecalho onde os dados da pagina estao contidos-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testes Livres</title><!--Titulo da aba no browser-->
+    <style> /* O style é onde se programa o CSS */
+        body{
+            background-color: black;
+        }
+        h1{
+            color: lawngreen;
+            font: normal 30pt Arial;
+        }
+        p{
+            color: gold;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste livre no HTML</h1> <!--Titulo da parte escrita da pagina-->
+    <p>Esse espeço é feito para teste de elementos em HTML, CSS e Javascript.</p><!--Paragrafo de texto-->
+    <img src="logo.png" alt="Flowers" style="width:auto;"><!--Imagem na pagina-->
+    <script>//No script se escreve o codigo em JavaScript
+        window.alert('Aproveite e seja livre para testar e errar!')
+        var nome = window.prompt('Qual o seu nome?')
+        window.alert('Seja bem vindo, ' + nome + '!')
+        var n1 = Number(window.prompt(nome + ', escolha um numero:'))
+        var n2 = Number(window.prompt('Escolha outro numero:'))
+        var n3 = n1 + n2
+        window.alert('O resultado da soma dos numeros é ' + n3 + '!')
+        window.alert('Obrigado por testar nossa API. Até mais ' + nome + '!')//Se der enter dentro do texto ele entende como paragrafo
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br"><!--Lingua utilizada-->
+<head><!--Cabecalho onde os dados da pagina estao contidos-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML-Calc</title><!--Titulo da aba no browser-->
+    <style> /* O style é onde se programa o CSS */
+        body{
+            background-color: black;
+            color: rgb(129, 252, 6);
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML-Percent-Calc</h1> <!--Titulo da parte escrita da pagina-->
+    <script>//No script se escreve o codigo em JavaScript
+        var nome = window.prompt('Qual o seu nome?')
+        window.alert('Seja bem vindo, ' + nome + '!')
+        var n1 = Number(window.prompt(nome + ', escolha um numero:'))
+        var n2 = Number(window.prompt('Escolha outro numero:'))
+        var n3 = n1 + n2
+        document.write('O resultado da soma dos numeros é ' + n3 + '!<br />')
+        document.write('Obrigado por testar nossa API, ' + nome + '!<br />')
+        document.write('Se quiser fazer outra conta basta apertar a tecla <strong>F5</strong>!')
+    </script>
+    
+</body>
+</html>
