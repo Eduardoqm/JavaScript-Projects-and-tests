@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+</head>
+
+<body>
+<!--multiple é definido para que múltiplos arquivos possam ser selecionados-->
+
+<input id="myfiles" multiple type="file">
+
+</body>
+
+<script>
+var puxarArquivos = function() {
+    var fileInput = document.querySelector("#myfiles");
+    var files = fileInput.files;
+
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        alert(file.name);
+    }
+}
+
+// seta o 'onchange' do elemento input para chamar a função puxarArquivos
+document.querySelector("#myfiles").onchange = puxarArquivos;
+</script>
+
+</html>

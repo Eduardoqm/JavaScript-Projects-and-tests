@@ -1,0 +1,1 @@
+Essa é a ideia de um plicativo para encontrar receitas veganas com os ingredientes que vc tem em casa, digitando palavras chaves.
