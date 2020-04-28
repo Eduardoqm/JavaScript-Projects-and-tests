@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <title>Errando!</title>
+
+  <meta name="text:Search Label" content="" />
+  <script type="text/javascript" src="www.google.com"></script>
+
+ </head>
+ <body>
+  <div>
+   <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
+   <a class="buscar-btn">
+    <i class="far fa-search"></i>
+   </a>
+  </div>
+
+  <form onsubmit="return tagSearch(this)">
+    <input type="text" name="tag" placeholder="Buscar..." onfocus="if (this.value == '{text:Search Label}') {this.value=''}" onblur="if (this.value == '') {this.value='{text:Search Label}'}" />
+    <input type="submit" value="Search" />
+  </form>
+
+  
+ </body>
+</html>
